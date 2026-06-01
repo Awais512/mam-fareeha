@@ -46,13 +46,49 @@ export default function Navigation() {
         scrolled ? "py-3" : "py-5"
       }`}
     >
+      <div
+        aria-hidden
+        className={`absolute inset-x-0 top-0 -z-10 h-28 transition-opacity duration-500 ${
+          scrolled ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          backdropFilter: "blur(18px) saturate(180%)",
+          WebkitBackdropFilter: "blur(18px) saturate(180%)",
+          background:
+            "linear-gradient(180deg, rgba(15, 7, 41, 0.55) 0%, rgba(15, 7, 41, 0.25) 50%, rgba(15, 7, 41, 0) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+          maskImage:
+            "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className={`absolute inset-x-0 top-0 -z-20 h-28 transition-opacity duration-500 ${
+          scrolled ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(15, 7, 41, 0.5) 0%, transparent 100%)",
+        }}
+      />
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav
           className={`flex items-center justify-between rounded-full px-4 sm:px-6 py-2.5 transition-all duration-500 ${
             scrolled
-              ? "glass-dark shadow-2xl shadow-purple-900/20"
+              ? "shadow-2xl shadow-purple-900/30 ring-1 ring-gold/20"
               : "bg-transparent"
           }`}
+          style={
+            scrolled
+              ? {
+                  background: "rgba(15, 7, 41, 0.6)",
+                  backdropFilter: "blur(24px) saturate(200%)",
+                  WebkitBackdropFilter: "blur(24px) saturate(200%)",
+                }
+              : undefined
+          }
         >
           <a
             href="#home"
